@@ -33,6 +33,7 @@ export default function Projects({projects}) {
         flex-flow: row wrap;
         gap: 50px;
         justify-content: center;
+        background-color: white;
         //height: 30vh;
           //display: grid;
           //grid-template-columns: 1fr 1fr;
