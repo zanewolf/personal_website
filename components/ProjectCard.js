@@ -15,7 +15,7 @@ export default function ProjectCard({ project }) {
                     height={'200'}
                 />
             </div>
-            <div className="content">
+            <div className="card-content">
                 <div className="info">
                     <h4>{ name }</h4>
                     {/*<p>Takes approx { cookingTime } mins to make</p>*/}
@@ -28,12 +28,14 @@ export default function ProjectCard({ project }) {
         .card {
           //transform: rotateZ(-1deg);
           width: 300px;
-          height: 500px;
+          height: auto;
+
+        }
+        .card-content {
           background: #fff;
           box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
-        }
-        .content {
-
+          padding-bottom: 10px;
+          //height: auto;
           //position: relative;
           //top: -40px;
           //left: -10px;

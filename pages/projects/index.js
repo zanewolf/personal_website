@@ -14,7 +14,8 @@ export async function getStaticProps(){
     return{
         props: {
             projects: res.items
-        }
+        },
+        revalidate: 1
     }
 
 }
@@ -33,7 +34,7 @@ export default function Projects({projects}) {
         flex-flow: row wrap;
         gap: 50px;
         justify-content: center;
-        background-color: white;
+        //background-color: white;
         //height: 30vh;
           //display: grid;
           //grid-template-columns: 1fr 1fr;
