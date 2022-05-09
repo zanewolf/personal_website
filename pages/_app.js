@@ -11,8 +11,6 @@ function MyApp({ Component, pageProps }) {
                   <meta className="keywords" content={Component.keywords}/>
               }
           </Head>
-
-
           <Layout>
               <Component {...pageProps} />
           </Layout>
