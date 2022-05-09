@@ -11,8 +11,8 @@ export default function ProjectCard({ project }) {
                     src={'https:' + thumbnail.fields.file.url}
                     // layout={'fixed'}
                     alt={'project-image-'+name}
-                    width={'600'}
-                    height={'400'}
+                    width={'300'}
+                    height={'200'}
                 />
             </div>
             <div className="content">
@@ -26,17 +26,17 @@ export default function ProjectCard({ project }) {
             </div>
             <style jsx>{`
         .card {
-          transform: rotateZ(-1deg);
-          width: 600px;
-          height: 100px;
-        }
-        .content {
+          //transform: rotateZ(-1deg);
+          width: 300px;
+          height: 500px;
           background: #fff;
           box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
-          margin: 0;
-          position: relative;
-          top: -40px;
-          left: -10px;
+        }
+        .content {
+
+          //position: relative;
+          //top: -40px;
+          //left: -10px;
         }
         .info {
           padding: 16px;
@@ -52,7 +52,7 @@ export default function ProjectCard({ project }) {
         .actions {
           margin-top: 20px;
           display: flex;
-          justify-content: flex-end;
+          justify-content: center;
         }
         .actions a {
           color: #fff;

@@ -29,9 +29,14 @@ export default function Projects({projects}) {
             ))}
             <style jsx>{`
         .project-list {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          grid-gap: 500px 60px;
+        display: flex;
+        flex-flow: row wrap;
+        gap: 50px;
+        justify-content: center;
+        //height: 30vh;
+          //display: grid;
+          //grid-template-columns: 1fr 1fr;
+          //grid-gap: 400px 60px;
         }
       `}</style>
         </div>
