@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }) {
               {Component.keywords &&
                   <meta className="keywords" content={Component.keywords}/>
               }
+
           </Head>
           <Layout>
               <Component {...pageProps} />

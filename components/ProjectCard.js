@@ -5,8 +5,8 @@ export default function ProjectCard({ project }) {
     const { name, slug, thumbnail } = project.fields
 
     return (
-        <div className="card">
-            <div className="featured">
+        <div className="card bg-white rounded-3 overflow-hidden shadow-lg hover:shadow-2xl transition ease-out duration:500 transform hover:scale-105">
+            <div className="featured object-cover">
                 <Image
                     src={'https:' + thumbnail.fields.file.url}
                     // layout={'fixed'}
@@ -29,6 +29,7 @@ export default function ProjectCard({ project }) {
           //transform: rotateZ(-1deg);
           width: 300px;
           height: auto;
+          color: #000;
 
         }
         .card-content {
