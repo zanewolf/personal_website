@@ -1,19 +1,33 @@
-// import styles from '../styles/Home.module.css'
-import Link from "next/link";
-import Image from "next/image";
+Home.title=' Zane Wolf | Home'
 
-Home.title=' Visual Inzanity | Home'
+
 
 export default function Home() {
-  return (
-     <div className={"m-12"}>
-         <h1 className={"text-3xl font-bold"}>hi. i'm zane wolf.</h1>
-         {/*<Image*/}
-         {/*    src={'/Arcadia_Shots-5.jpg'} width={400} height={600} alt={"profile shot"}*/}
-         {/*/>*/}
-         <p className={"text-sm"}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia non tellus id sagittis. Maecenas quis tempor justo. Mauris et ante augue. Integer interdum turpis vel nulla efficitur, vel euismod nisl condimentum. Morbi suscipit, augue in posuere congue, quam turpis semper ligula, quis condimentum lorem ante ut tellus. Praesent sed lacus justo. Suspendisse dignissim blandit felis, et feugiat elit dignissim vel. Proin sed ultrices ex. Integer vestibulum malesuada diam a egestas. </p>
 
-         {/*<Link href={'/ninjas'} ><a className={styles.btn}>See Ninja Listing</a></Link>*/}
+  const keywords = [
+      {keyword: 'rock climber', color: 'text-primary'},
+      {keyword: 'data designer', color: 'text-secondary-200'},
+      {keyword: 'web developer', color: 'text-secondary-300'},
+      {keyword: 'wildlife photographer', color: 'text-secondary-400'}
+  ]
+
+
+  return (
+     <div className={'flex flex-col items-center justify-center mt-20 mb-20'}>
+         <div className="greeting mb-5">
+             <h1 className={"text-3xl"}>hi. i'm zane and i'm a </h1>
+         </div>
+         <div className="title-content__container inline-flex overflow-hidden font-semibold text-3xl items-center mt-1">
+             {/*<p className="title-content__container__text  inline-flex">I'm a</p>*/}
+             <span className="blinker">[</span>
+             <ul className="title-content__container__list text-center list-none">
+                 {keywords.map((keyword,i)=>{
+                     console.log(keyword)
+                     return <li className={`title-content__container__list__item mt-1 ${keyword.color}`} key={i}>{keyword.keyword}</li>
+                 })}
+             </ul>
+             <span className="blinker">]</span>
+         </div>
      </div>
   )
 }
