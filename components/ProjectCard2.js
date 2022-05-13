@@ -5,7 +5,7 @@ export default function ProjectCard2({ project }) {
     const { name, slug, thumbnail } = project.fields
 
     return (
-        <div className="card hex1 overflow-hidden shadow-lg hover:border-white hover:border-8 transition ease-out duration:500">
+        <div className="card overflow-hidden shadow-lg hover:border-white hover:border-8 transition ease-out duration:500">
             <div className="featured object-cover">
                 <Image
                     src={'https:' + thumbnail.fields.file.url}
@@ -30,7 +30,7 @@ export default function ProjectCard2({ project }) {
           width: 300px;
           height: auto;
           color: #000;
-          -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+          //-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 
         }
         .card-content {

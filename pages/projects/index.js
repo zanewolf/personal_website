@@ -1,19 +1,19 @@
 import React from 'react'
 import {createClient} from "contentful";
-import ProjectCard2 from "../../components/ProjectCard";
+import ProjectCard2 from "../../components/ProjectCard2";
 
 export async function getStaticProps(){
 
-    const client = createClient({
+    const client2 = createClient({
         space: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
     })
 
-    const res = await client.getEntries({content_type:'projects'})
+    const res2 = await client2.getEntries({content_type:'projects'})
 
     return{
         props: {
-            projects: res.items
+            projects: res2.items
         },
         revalidate: 10
     }
@@ -21,7 +21,7 @@ export async function getStaticProps(){
 }
 
 export default function ProjectPage({projects}) {
-    console.log(projects)
+    // console.log(projects)
     return (
         <div className="project-list">
             {projects.map(project => (

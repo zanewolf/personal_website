@@ -9,21 +9,23 @@ export default function ProjectCard({ project }) {
             <div id="hexcontainer">
                 <div className="hex1">
                     <div className="hex2">
-                        <a className="hexlink" id="hl1" href="">
-                            <div className="hexcover"></div>
-                            <Image
-                              src={'https:' + thumbnail.fields.file.url}
-                              // layout={'fixed'}
-                              alt={'project-image-'+name}
-                              layout={'fill'}
-                              objectFit= {'cover'}
-                              // // sizes={'15vw'}
-                              // width={thumbnail.fields.file.details.image.width}
-                              // height={thumbnail.fields.file.details.image.height*2}
-                            />
-                            <h3>{name}</h3>
-                            <div className="plus"></div>
-                        </a>
+                        <Link href={"/projects/"+slug}>
+                            <a className="hexlink" id="hl1" >
+                                <div className="hexcover"></div>
+                                <Image
+                                    src={'https:' + thumbnail.fields.file.url}
+                                    // layout={'fixed'}
+                                    alt={'project-image-'+name}
+                                    layout={'fill'}
+                                    objectFit= {'cover'}
+                                    // // sizes={'15vw'}
+                                    // width={thumbnail.fields.file.details.image.width}
+                                    // height={thumbnail.fields.file.details.image.height*2}
+                                />
+                                <h3>{name}</h3>
+                                {/*<div className="plus"></div>*/}
+                            </a>
+                        </Link>
                     </div>
                 </div>
             </div>

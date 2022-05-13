@@ -13,6 +13,8 @@ export const getStaticPaths = async () => {
         content_type: "projects"
     })
 
+    console.log(res)
+
     const paths = res.items.map(item => {
         return {
             params: { slug: item.fields.slug }
@@ -68,14 +70,14 @@ export default function ProjectDetails({ project }) {
             <div className="info">
                 <h3>Categories:</h3>
 
-                {categories.map(category => (
+                {categories && categories.map(category => (
                     <span key={category}>{ category }</span>
                 ))}
             </div>
             <div className="info">
                 <h3>Tools:</h3>
 
-                {tools.map(tool => (
+                {tools && tools.map(tool => (
                     <span key={tool}>{ tool }</span>
                 ))}
             </div>
