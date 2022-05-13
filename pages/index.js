@@ -3,6 +3,7 @@ import {createClient} from "contentful";
 import Image from "next/image";
 import hexBackground from '../public/hex_background_3.png'
 import {Parallax} from "react-scroll-parallax";
+import Link from "next/link";
 
 Home.title=' Zane Wolf | Home'
 
@@ -67,11 +68,16 @@ export default function Home({projects}) {
                       <svg width="174" height="200"
                            viewBox="0 0 173.20508075688772 200"
                            style={{filter: 'drop-shadow(rgba(0, 0, 0, 0.5) 0px 0px 10px)'}}
-                      ><a href={"https://www.youtube.com/watch?v=thOifuHs6eY"} target={"_blank"} rel={"noreferrer noopener"}>
-
+                      >
+                          <Link href={"https://www.youtube.com/watch?v=thOifuHs6eY"} target={"_blank"} rel={"noreferrer noopener"}>
+                                <a>
                               <path fill="#fff"
-                                    d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"></path>
-                          </a></svg>
+                                    d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z">
+
+                              </path>
+                                </a>
+                          </Link>
+                      </svg>
 
 
                   </div>
