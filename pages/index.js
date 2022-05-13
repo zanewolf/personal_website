@@ -69,8 +69,8 @@ export default function Home({projects}) {
                            viewBox="0 0 173.20508075688772 200"
                            style={{filter: 'drop-shadow(rgba(0, 0, 0, 0.5) 0px 0px 10px)'}}
                       >
-                          <Link href={"https://www.youtube.com/watch?v=thOifuHs6eY"} target={"_blank"} rel={"noreferrer noopener"}>
-                                <a>
+                          <Link href={"https://www.youtube.com/watch?v=thOifuHs6eY"} passHref>
+                                <a target={"_blank"} rel={"noreferrer noopener"}>
                               <path fill="#fff"
                                     d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z">
 
