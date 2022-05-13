@@ -1,6 +1,6 @@
 import React from 'react'
 import {createClient} from "contentful";
-import ProjectCard from "../../components/ProjectCard";
+import ProjectCard2 from "../../components/ProjectCard";
 
 export async function getStaticProps(){
 
@@ -20,13 +20,13 @@ export async function getStaticProps(){
 
 }
 
-export default function Projects({projects}) {
+export default function ProjectPage({projects}) {
     console.log(projects)
     return (
         <div className="project-list">
             {projects.map(project => (
                 // <h3>{project.fields.name}</h3>
-                <ProjectCard key={project.sys.id} project={project} />
+                <ProjectCard2 key={project.sys.id} project={project} />
             ))}
             <style jsx>{`
         .project-list {

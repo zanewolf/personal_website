@@ -41,7 +41,7 @@ export default function Home({projects}) {
   return (
       <div>
           {/*<section>*/}
-              <Parallax speed={-20} className={'flex flex-col items-center justify-center overflow-x-hidden pt-40 md:pt-80 md:mb-32'}>
+              <Parallax speed={-25} className={'flex flex-col items-center justify-center overflow-x-hidden pt-40 md:pt-80 md:mb-32'}>
                   <div className="greeting mb-5">
                       <h1 className={"text-4xl"}>hi. i'm zane and i'm a </h1>
                   </div>
