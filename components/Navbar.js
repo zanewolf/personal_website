@@ -11,15 +11,15 @@ function NavLink({to, children}) {
 
 function MobileNav({open, setOpen}) {
     return (
-        <div className={`absolute top-0 left-0 h-screen w-screen bg-white transform ${open ? "-translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
+        <div className={`absolute top-0 left-0 h-screen w-screen bg-black transform ${open ? "-translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
             <div className="flex items-center justify-center filter drop-shadow-md bg-white h-20"> {/*logo container*/}
                 <a className="text-xl font-semibold" href="/">zane wolf</a>
             </div>
-            <div className="flex flex-col ml-4">
+            <div className="flex flex-col justify-center">
                 {menuData.map((navLink,i)=>{
                     return (
                         <Link key={i} href={navLink.to}>
-                            <a className="text-xl font-medium my-4"  onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>
+                            <a className="text-xl font-medium my-4 justify-center"  onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>
                                 {navLink.title}
                             </a>
                         </Link>
@@ -39,7 +39,7 @@ export default function Navbar() {
 
     const [open, setOpen] = useState(false)
     return (
-        <nav className="flex filter px-12 py-4 h-20 items-center">
+        <nav className="flex filter px-2 md:px-12 md:py-4 h-25 items-center">
             <MobileNav open={open} setOpen={setOpen}/>
             <div className="w-5/12 flex items-center">
                 {/*<a className="text-2xl font-semibold" href="/">LOGO</a>*/}
@@ -66,7 +66,7 @@ export default function Navbar() {
                     <span className={`h-1 w-full bg-black rounded-lg transform transition duration-300 ease-in-out ${open ? "-rotate-45 -translate-y-3.5" : ""}`} />
                 </div>
 
-                <div className="hidden md:flex">
+                <div className="hidden md:flex text-lg md:text-xl">
                     {menuData.map((navLink,i)=>{
                         return <NavLink to={navLink.to} key={i}>{navLink.title}</NavLink>
                         }
