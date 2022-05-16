@@ -4,14 +4,14 @@ import Image from 'next/image'
 import {menuData} from '../data/menuData'
 
 function NavLink({to, children}) {
-    return <Link href={to}><a className={`mx-4`}>
+    return <Link href={to}><a className={`mx-4 hover:scale-110 duration-70`}>
         {children}
     </a></Link>
 }
 
 function MobileNav({open, setOpen}) {
     return (
-        <div className={`absolute top-0 left-0 h-screen w-screen bg-black transform ${open ? "-translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
+        <div className={`absolute top-0 left-0 h-screen w-screen bg-black z-10 transform ${open ? "-translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
             <div className="flex items-center justify-center filter drop-shadow-md bg-white h-20"> {/*logo container*/}
                 <Link href="/">
                     <a className="text-xl font-semibold" >zane wolf</a>
@@ -41,11 +41,11 @@ export default function Navbar() {
 
     const [open, setOpen] = useState(false)
     return (
-        <nav className="flex filter px-2 md:px-12 md:py-4 h-25 items-center">
+        <nav className="flex filter px-2 md:px-12 md:py-4 h-25 items-center z-10">
             <MobileNav open={open} setOpen={setOpen}/>
             <div className="w-5/12 flex items-center">
                 {/*<a className="text-2xl font-semibold" href="/">LOGO</a>*/}
-                    <h1 className={"text-2xl md:text-4xl"}>
+                    <h1 className={`text-2xl md:text-4xl z-20 ${open ? 'text-black' :'text-primary'}`}>
                         <Link href={'/'}>
                             <a><span className={'font-extralight'}>visual</span><span className={'font-extrabold'}>zanity</span>
                             {/*<span className={'font-light text-lg pl-4'}> by zane wolf</span>*/}
@@ -63,9 +63,9 @@ export default function Navbar() {
                     setOpen(!open)
                 }}>
                     {/* hamburger button */}
-                    <span className={`h-1 w-full bg-white rounded-lg transform transition duration-300 ease-in-out ${open ? "rotate-45 translate-y-3.5 bg-black" : ""}`} />
-                    <span className={`h-1 w-full bg-white rounded-lg transition-all duration-300 ease-in-out ${open ? "w-0 bg-black" : "w-full"}`} />
-                    <span className={`h-1 w-full bg-white rounded-lg transform transition duration-300 ease-in-out ${open ? "-rotate-45 -translate-y-3.5 bg-black" : ""}`} />
+                    <span className={`h-1 w-full rounded-lg transform transition duration-300 ease-in-out ${open ? "rotate-45 translate-y-3.5 bg-black  " : "bg-white"}`} />
+                    <span className={`h-1 w-full rounded-lg transition-all duration-300 ease-in-out ${open ? "w-0 bg-black  " : "w-full bg-white"}`} />
+                    <span className={`h-1 w-full rounded-lg transform transition duration-300 ease-in-out ${open ? "bg-black -rotate-45 -translate-y-3.5 b" : "bg-white"}`} />
                 </div>
 
                 <div className="hidden md:flex text-lg md:text-xl">
