@@ -79,7 +79,7 @@ export default function Gallery({mistakes}) {
                             src={'https://' + focusImg.fields.media.fields.file.url}
                             layout={'raw'}
                             alt={'modal image'}
-                            layout={'fill'}
+                            // layout={'fill'}
                             objectFit= {'cover'}
                             quality={100}
                             // sizes={'15vw'}

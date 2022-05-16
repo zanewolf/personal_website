@@ -10,28 +10,28 @@ const Footer = () => {
             <section className="contactme flex flex-col flex-nowrap justify-center mb-8">
                 <div className="text-3xl m-auto">follow or contact me</div>
                 <div className="icons flex flex-row justify-center text-8xl gap-24 mt-4">
-                    <div className="twitter" className={' hover:scale-110 duration-200'}>
+                    <div className={"twitter hover:scale-110 duration-200"}>
                         <Link href={'https://twitter.com/inzaneresearch'} passHref>
                             <a target={"_blank"} referrer={'noreferrer'}>
                                 <AiOutlineTwitter />
                             </a>
                         </Link>
                     </div>
-                    <div className="instagram" className={' hover:scale-110 duration-200'}>
+                    <div className={"instagram hover:scale-110 duration-200"}>
                         <Link href={'https://www.instagram.com/zaneywolf/?hl=en'} passHref>
                             <a target={"_blank"} referrer={'noreferrer'}>
                                 <AiOutlineInstagram/>
                             </a>
                         </Link>
                     </div>
-                    <div className="github" className={' hover:scale-110 duration-200'}>
+                    <div className={'github hover:scale-110 duration-200'}>
                         <Link href={'https://github.com/zanewolf'} passHref>
                             <a target={"_blank"} referrer={'noreferrer'}>
                                 <FiGithub/>
                             </a>
                         </Link>
                     </div>
-                    <div className="email" onClick={()=>copy()} className={' hover:scale-110 duration-200'}>
+                    <div className={'email hover:scale-110 duration-200'}  onClick={()=>copy()}>
                         {/*<Link href={'https://twitter.com/inzaneresearch'} passHref>*/}
                         {/*<a target={"_blank"} referrer={'noreferrer'}>*/}
                         <HiOutlineMail/>
