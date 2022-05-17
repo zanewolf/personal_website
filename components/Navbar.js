@@ -11,17 +11,17 @@ function NavLink({to, children}) {
 
 function MobileNav({open, setOpen}) {
     return (
-        <div className={`absolute top-0 left-0 h-screen w-screen bg-black z-10 transform ${open ? "-translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
-            <div className="flex items-center justify-center filter drop-shadow-md bg-white h-20"> {/*logo container*/}
+        <div className={`mobileMenu absolute top-0 left-0 h-auto min-h-screen w-screen bg-black z-10 transform ${open ? "-translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
+            <div className="flex items-center justify-center filter drop-shadow-md bg-white h-28"> {/*logo container*/}
                 <Link href="/">
-                    <a className="text-xl font-semibold" >zane wolf</a>
+                    <a className="text-xl font-semibold" >visualzanity</a>
                 </Link>
             </div>
-            <div className="flex flex-col justify-center">
+            <div className="flex flex-col justify-center mt-12">
                 {menuData.map((navLink,i)=>{
                     return (
                         <Link key={i} href={navLink.to}>
-                            <a className="text-xl font-medium my-4 justify-center"  onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>
+                            <a className="text-4xl font-medium my-4 justify-center"  onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>
                                 {navLink.title}
                             </a>
                         </Link>
@@ -33,6 +33,7 @@ function MobileNav({open, setOpen}) {
                 {/*    Contact*/}
                 {/*</a>*/}
             </div>
+            <div className={'relative bottom-0'}> by zane wolf</div>
         </div>
     )
 }
@@ -41,13 +42,17 @@ export default function Navbar() {
 
     const [open, setOpen] = useState(false)
     return (
-        <nav className="flex filter px-2 md:px-12 md:py-4 h-25 items-center z-10">
-            <MobileNav open={open} setOpen={setOpen}/>
+        <nav className="flex filter px-2 md:px-12 md:py-4 text-center z-10">
+            {/*<div className="mobile w-full">*/}
+
+                <MobileNav open={open} setOpen={setOpen}/>
+            {/*</div>*/}
             <div className="w-5/12 flex items-center">
                 {/*<a className="text-2xl font-semibold" href="/">LOGO</a>*/}
-                    <h1 className={`text-2xl md:text-4xl z-20 ${open ? 'text-black' :'text-primary'}`}>
+                    <h1 className={`z-20 text-4xl md:text-4xl ${open ? 'text-black' :'text-primary'}`}>
                         <Link href={'/'}>
-                            <a><span className={'font-extralight'}>visual</span><span className={'font-extrabold'}>zanity</span>
+                            <a>
+                                <span className={'font-extralight '}>visual</span><span className={'font-extrabold'}>zanity</span>
                             {/*<span className={'font-light text-lg pl-4'}> by zane wolf</span>*/}
                             </a>
                         </Link>
@@ -57,9 +62,9 @@ export default function Navbar() {
                     {/*    src={'/logo.png'} width={128} height={77} alt={"logo"}*/}
                     {/*/>*/}
             </div>
-            <div className="w-9/12 flex justify-end items-center">
+            <div className="w-full flex justify-end items-center align-center m-auto">
 
-                <div className="z-50 flex relative w-8 h-8 flex-col justify-between items-center md:hidden" onClick={() => {
+                <div className="z-50 flex relative w-8 h-8 flex-col justify-between items-center mt-2 mr-2 md:hidden text-lg" onClick={() => {
                     setOpen(!open)
                 }}>
                     {/* hamburger button */}

@@ -53,19 +53,19 @@ export default function Home({projects}) {
       <div className={''}>
           <section className={'landingPage'}>
               <Parallax speed={-27} className={'title-content flex flex-col items-center justify-center overflow-x-hidden pt-40 md:pt-80 md:mb-32'}>
-                  <div className="greeting mb-5 ">
-                      <h1 className={"text-4xl"}>hi. i'm zane and i'm a </h1>
+                  <div className="greeting mb-5 flex-wrap">
+                      <h1 className={"text-4xl text-shadow-lg"}>hi. i'm zane and i'm a </h1>
                   </div>
                   <div className="title-content__container inline-flex overflow-hidden font-semibold text-3xl items-center mt-1">
                       {/*<p className="title-content__container__text  inline-flex">I'm a</p>*/}
-                      <span className="blinker text-xl md:text-4xl">[</span>
+                      <span className="blinker text-xl md:text-4xl text-shadow">[</span>
                       <ul className="title-content__container__list text-center list-none">
                           {keywords.map((keyword,i)=>{
                               // console.log(keyword)
-                              return <li className={`title-content__container__list__item m-1 text-2xl md:text-3xl ${keyword.color}`} key={i}>{keyword.keyword}</li>
+                              return <li className={`title-content__container__list__item m-1 text-2xl md:text-3xl text-shadow ${keyword.color}`} key={i}>{keyword.keyword}</li>
                           })}
                       </ul>
-                      <span className="blinker">]</span>
+                      <span className="blinker text-xl md:text-4xl text-shadow">]</span>
                   </div>
               </Parallax>
               <Parallax speed={-10} className={'hidden md:block'} >
@@ -112,6 +112,7 @@ export default function Home({projects}) {
                   {/*</div>*/}
 
           </section>
+          <div className="spacer h-32"></div>
 
       </div>
 

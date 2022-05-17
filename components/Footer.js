@@ -7,9 +7,9 @@ import {HiOutlineMail} from "react-icons/hi";
 const Footer = () => {
     return (
         <footer>
-            <section className="contactme flex flex-col flex-nowrap justify-center mb-8">
-                <div className="text-3xl m-auto">follow or contact me</div>
-                <div className="icons flex flex-row justify-center text-8xl gap-24 mt-4">
+            <section className="contactme flex flex-col flex-nowrap justify-center mb-8 text-secondary-200">
+                <div className="text-2xl m-auto">follow or contact me</div>
+                <div className="icons flex flex-row justify-center text-2xl md:text-7xl gap-12 md:gap-24 mt-4">
                     <div className={"twitter hover:scale-110 duration-200"}>
                         <Link href={'https://twitter.com/inzaneresearch'} passHref>
                             <a target={"_blank"} referrer={'noreferrer'}>
@@ -24,7 +24,7 @@ const Footer = () => {
                             </a>
                         </Link>
                     </div>
-                    <div className={'github hover:scale-110 duration-200'}>
+                    <div className={'github scale-90 hover:scale-100 duration-200'}>
                         <Link href={'https://github.com/zanewolf'} passHref>
                             <a target={"_blank"} referrer={'noreferrer'}>
                                 <FiGithub/>
