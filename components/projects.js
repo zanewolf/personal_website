@@ -27,7 +27,7 @@ export default function Projects({projects}) {
                     objectFit={'fill'}
                     objectPosition={'top'}
                     quality={'100'}
-                    sizes={'24vw'}
+                    sizes={'100vh'}
                     // width={'100vw'}
                     // height={'auto'}
 
@@ -64,6 +64,7 @@ export default function Projects({projects}) {
               .bgWrap{
                     //width: 100%;
                     height: auto;
+                    //background-image: no-repeat cover;
                     //min-height: 100%;
                     //background-image: url('../public/hex.svg') no-repeat cover/contain;
                     //background-size:contain;
@@ -72,7 +73,7 @@ export default function Projects({projects}) {
               }
                 .projectList{
                   height: auto;
-                  max-height:100vh;
+                  //max-height:100vh;
                   //margin-bottom:10vh;
                 }
                 .hexagonGallery {

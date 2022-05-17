@@ -7,7 +7,7 @@ export default function ProjectCard({ project }) {
     const {name, slug, thumbnail} = project.fields
 
     return (
-        <div className={'hex2 flex justify-center relative hover:brightness-50'}>
+        <div className={'hex2 w-[42vw] h-[45vw] md:w-[17vw] md:h-[19vw] flex justify-center relative hover:brightness-50'}>
 
             {/*<div className="projectName text-xl flex items-center text-primary lowercase h-4 m-auto group-hover:z-20">{name}</div>*/}
             <div >
@@ -34,8 +34,8 @@ export default function ProjectCard({ project }) {
                 .hex2 {
                   //display: flex;
                   //position: relative;
-                  width: 17vw;
-                  height: 19vw;
+                  //width: 17vw;
+                  //height: 19vw;
                   //background-color: #424242;
                   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
                   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
