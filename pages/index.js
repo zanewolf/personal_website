@@ -1,13 +1,9 @@
 import Projects from "../components/projects";
 import {createClient} from "contentful";
-import Image from "next/image";
-import hexBackground from '../public/hex_background_3.png'
 import {Parallax} from "react-scroll-parallax";
 import Link from "next/link";
 import React from "react";
-import {AiOutlineTwitter,AiOutlineInstagram} from 'react-icons/ai'
-import {FiGithub} from 'react-icons/fi'
-import {HiOutlineMail} from 'react-icons/hi'
+
 
 Home.title=' Zane Wolf | Home'
 
@@ -20,7 +16,7 @@ export async function getStaticProps(){
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
     })
 
-    const res = await client.getEntries({content_type:'projects'})
+    const res = await client.getEntries({content_type:'projects',order:'-sys.createdAt'})
 
     return{
         props: {

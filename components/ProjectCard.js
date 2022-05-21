@@ -7,31 +7,47 @@ export default function ProjectCard({ project }) {
     const {name, slug, thumbnail} = project.fields
 
     return (
-        <div className={'hex2 w-[42vw] h-[45vw] md:w-[25vw] md:h-[27vw] lg:w-[17vw] lg:h-[19vw] flex justify-center relative hover:brightness-50'}>
+        <div className={'hex w-[42vw] h-[45vw] md:w-[25vw] md:h-[27vw] lg:w-[17vw] lg:h-[19vw] flex justify-center relative group'}>
 
-            {/*<div className="projectName text-xl flex items-center text-primary lowercase h-4 m-auto group-hover:z-20">{name}</div>*/}
-            <div >
+            {/*<div className={'group-hover:brightness-50 w-full -z-1'}>*/}
                 <Link href={"/projects/"+slug} >
                     <a>
 
-                        <span className={''}>{name}</span>
                         <Image
                             src={'https:' + thumbnail.fields.file.url}
-                            // layout={'fixed'}
+                            className={'group-hover:brightness-50 -z-5'}
                             alt={'project-image-'+name}
                             layout={'fill'}
                             objectFit= {'cover'}
                             // width={400}
                             // height={300}
                         />
+                        <div className={'flex flex-col flex-nowrap justify-center h-full items-center group-hover:relative'}>
+                            <div className={'text-2xl border-b-2 lowercase'}>{name}</div>
+                            <hr/>
+                            <div className={''}>
+                                {project.fields.categories}
+                            </div>
+                        </div>
                     </a>
                 </Link>
-            </div>
+
+
+                {/*<div className={'flex flex-col flex-nowrap items-center justify-center h-auto m-auto text-xl font-light lowercase group-hover:z-10'}>*/}
+                {/*    <div>{name}</div>*/}
+                {/*    <hr/>*/}
+                {/*    <div className={'flex justify-center items-center m-auto'}>*/}
+                {/*        {project.fields.categories}*/}
+                {/*    </div>*/}
+                {/*</div>*/}
+                {/*<div className="projectName text-xl flex justify-center items-center text-primary m-auto  group-hover:z-50">{name}</div>*/}
+
+            {/*</div>*/}
 
 
 
             <style jsx>{`
-                .hex2 {
+                .hex {
                   //display: flex;
                   //position: relative;
                   //width: 17vw;
