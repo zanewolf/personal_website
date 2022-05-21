@@ -7,7 +7,7 @@ export default function ProjectCard({ project }) {
     const {name, slug, thumbnail} = project.fields
 
     return (
-        <div className={'hex2 w-[42vw] h-[45vw] md:w-[17vw] md:h-[19vw] flex justify-center relative hover:brightness-50'}>
+        <div className={'hex2 w-[42vw] h-[45vw] md:w-[25vw] md:h-[27vw] lg:w-[17vw] lg:h-[19vw] flex justify-center relative hover:brightness-50'}>
 
             {/*<div className="projectName text-xl flex items-center text-primary lowercase h-4 m-auto group-hover:z-20">{name}</div>*/}
             <div >

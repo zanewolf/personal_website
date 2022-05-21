@@ -44,7 +44,7 @@ export default function Home({projects}) {
   const keywords = [
       {keyword: 'rock climber', color: 'text-primary'},
       {keyword: 'data designer', color: 'text-secondary-200'},
-      {keyword: 'web developer', color: 'text-secondary-300'},
+      {keyword: 'scientist', color: 'text-secondary-300'},
       {keyword: 'wildlife photographer', color: 'text-secondary-400'}
   ]
 
@@ -52,7 +52,7 @@ export default function Home({projects}) {
   return (
       <div className={''}>
           <section className={'landingPage'}>
-              <Parallax speed={-27} className={'title-content flex flex-col items-center justify-center overflow-x-hidden pt-40 md:pt-80 md:mb-32'}>
+              <Parallax speed={-20} className={'title-content flex flex-col items-center justify-center overflow-x-hidden pt-40 md:pt-80 md:mb-32'}>
                   <div className="greeting mb-5 flex-wrap">
                       <h1 className={"text-4xl text-shadow-lg"}>hi. i'm zane and i'm a </h1>
                   </div>
@@ -101,13 +101,13 @@ export default function Home({projects}) {
               </Parallax>
 
           </section>
-          <section className={'projectDiv'}>
+          <section className={''}>
                   {/*<div >*/}
 
                       {/*<div className="hexed mt-20">*/}
 
 
-                      <Projects projects={projects}/>
+                      <Projects projects={projects.filter(d=>d.fields.selected)}/>
                       {/*</div>*/}
                   {/*</div>*/}
 
