@@ -4,18 +4,21 @@ import Image from 'next/image'
 export default function ProjectCard2({ project }) {
     const { name, slug, thumbnail } = project.fields
 
+    // console.log('hi')
     return (
-        <div className="card overflow-hidden shadow-lg hover:border-white hover:border-8 transition ease-out duration:500">
-            <div className="featured object-cover">
+        <div className="card overflow-hidden shadow-lg hover:scale-105 transition ease-out duration:500">
+            <div className="featured" style={{ position: 'relative', width: '100%', height: '60%' }}>
                 <Image
                     src={'https:' + thumbnail.fields.file.url}
-                    // layout={'fixed'}
+                    layout={'fill'}
                     alt={'project-image-'+name}
-                    width={'300'}
-                    height={'200'}
+                    objectFit={'cover'}
+                    // sizes={'100%'}
+                    // width={'100%'}
+                    // height={'100%'}
                 />
             </div>
-            <div className="card-content">
+            <div className="card-content h-full">
                 <div className="info">
                     <h4>{ name }</h4>
                     {/*<p>Takes approx { cookingTime } mins to make</p>*/}
@@ -27,8 +30,9 @@ export default function ProjectCard2({ project }) {
             <style jsx>{`
         .card {
           //transform: rotateZ(-1deg);
-          width: 300px;
-          height: auto;
+          //position: relative;
+          width: 16vw;
+          height: 20vw;
           color: #000;
           //-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 
@@ -36,7 +40,7 @@ export default function ProjectCard2({ project }) {
         .card-content {
           background: #fff;
           box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
-          padding-bottom: 10px;
+          //padding-bottom: 10px;
           //height: auto;
           //position: relative;
           //top: -40px;

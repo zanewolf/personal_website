@@ -11,29 +11,33 @@ function NavLink({to, children}) {
 
 function MobileNav({open, setOpen}) {
     return (
-        <div className={`mobileMenu absolute top-0 left-0 h-auto min-h-screen w-screen bg-black z-10 transform ${open ? "-translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
+        <div className={`mobileMenu absolute top-0 left-0 h-full min-h-screen w-screen bg-black z-10 transform ${open ? "-translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
             <div className="flex items-center justify-center filter drop-shadow-md bg-white h-28"> {/*logo container*/}
                 <Link href="/">
                     <a className="text-xl font-semibold" >visualzanity</a>
                 </Link>
             </div>
-            <div className="flex flex-col justify-center mt-12">
-                {menuData.map((navLink,i)=>{
-                    return (
-                        <Link key={i} href={navLink.to}>
-                            <a className="text-4xl font-medium my-4 justify-center"  onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>
-                                {navLink.title}
-                            </a>
-                        </Link>
-                    )})}
-                {/*<a className="text-xl font-medium my-4" href="/about" onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>*/}
-                {/*    About*/}
-                {/*</a>*/}
-                {/*<a className="text-xl font-normal my-4" href="/contact" onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>*/}
-                {/*    Contact*/}
-                {/*</a>*/}
+            <div className="h-full flex flex-col flex-between">
+                <div className="flex flex-col justify-center mt-12">
+                    {menuData.map((navLink,i)=>{
+                        return (
+                            <Link key={i} href={navLink.to}>
+                                <a className="text-4xl font-medium my-4 justify-center"  onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>
+                                    {navLink.title}
+                                </a>
+                            </Link>
+                        )})}
+                    {/*<a className="text-xl font-medium my-4" href="/about" onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>*/}
+                    {/*    About*/}
+                    {/*</a>*/}
+                    {/*<a className="text-xl font-normal my-4" href="/contact" onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>*/}
+                    {/*    Contact*/}
+                    {/*</a>*/}
+                </div>
+                <div className={'flex m-auto flex-end'}> by zane wolf</div>
+
             </div>
-            <div className={'relative bottom-0'}> by zane wolf</div>
+
         </div>
     )
 }
@@ -49,7 +53,7 @@ export default function Navbar() {
             {/*</div>*/}
             <div className="w-5/12 flex items-center">
                 {/*<a className="text-2xl font-semibold" href="/">LOGO</a>*/}
-                    <h1 className={`z-20 text-4xl md:text-4xl ${open ? 'text-black' :'text-primary'}`}>
+                    <h1 className={`z-20 text-4xl md:text-6xl ${open ? 'text-black' :'text-primary'}`}>
                         <Link href={'/'}>
                             <a>
                                 <span className={'font-extralight '}>visual</span><span className={'font-extrabold'}>zanity</span>
@@ -73,7 +77,7 @@ export default function Navbar() {
                     <span className={`h-1 w-full rounded-lg transform transition duration-300 ease-in-out ${open ? "bg-black -rotate-45 -translate-y-3.5 b" : "bg-white"}`} />
                 </div>
 
-                <div className="hidden md:flex text-lg md:text-xl">
+                <div className="hidden md:flex text-lg md:text-4xl">
                     {menuData.map((navLink,i)=>{
                         return <NavLink to={navLink.to} key={i}>{navLink.title}</NavLink>
                         }

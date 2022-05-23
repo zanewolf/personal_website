@@ -4,9 +4,9 @@ import Image from "next/image";
 import hexSVG from '../public/hex2.svg'
 import Link from "next/link";
 
-export default function Projects({projects}) {
+export default function SelectProjects({projects}) {
 
-    console.log(projects)
+    // console.log(projects)
 
     return (
         <div className="projectDiv flex flex-col flex-nowrap relative justify-center">

@@ -1895,6 +1895,11 @@
     "define-properties" "^1.1.4"
     "es-abstract" "^1.19.5"
 
+"stringquery@^1.0.8":
+  "integrity" "sha512-KqKh5OwkldIrG6TRAlOU02EIdvjC2A4LAGVvVyoDXRRTl0224naoKMRBf+uzPFdXE2+rcHVh2NKTznbsn+AzFw=="
+  "resolved" "https://registry.npmjs.org/stringquery/-/stringquery-1.0.8.tgz"
+  "version" "1.0.8"
+
 "strip-ansi@^6.0.1":
   "integrity" "sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A=="
   "resolved" "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz"

@@ -2,41 +2,46 @@ import React, {useState, useEffect} from 'react'
 import {createClient} from "contentful";
 import Image from "next/image";
 import Lightbox from 'react-modal-image'
+import {fetchMedia} from "../utils/ContentfulAPI";
 
 export async function getStaticProps(){
 
-    const client = createClient({
-        space: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-    })
 
-    const res = await client.getEntries({content_type:'mistakes'})
 
-    return{
-        props: {
-            mistakes: res.items
-        },
-        revalidate: 10
-    }
+    let content = fetchMedia('mistakes')
+        .then((projectsFetched)=> projectsFetched)
+        .catch((error)=> console.log(error))
+
+    return content
+
+
+    // const client = createClient({
+    //     space: process.env.CONTENTFUL_SPACE_ID,
+    //     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    // })
+    //
+    // const res = await client.getEntries({content_type:'mistakes'})
+    //
+    // return{
+    //     props: {
+    //         mistakes: res.items
+    //     },
+    //     revalidate: 10
+    // }
 
 }
 
-let photoObject=[]
 
-function randomize(a,b){
-    return Math.random()-0.5;
-}
-
-export default function Gallery({mistakes}) {
+export default function Gallery({content}) {
 
 
     // mistakes.sort(randomize)
 
     const [modalOpen, setModalOpen]= React.useState(false)
     const [focusImg, setFocusImg] = React.useState()
-    // console.log(mistakes)
+    console.log(content)
     const toggleModal = (img)=>{
-        console.log('hi', img)
+        // console.log('hi', img)
         setModalOpen(!modalOpen)
         setFocusImg(img)
 
@@ -47,12 +52,12 @@ export default function Gallery({mistakes}) {
         <div className={'flex flex-col flex-nowrap justify-center relative mt-24'}>
             <div className=" text-3xl p-4 m-auto">gallery of <span className={'font-bold text-secondary-200'}>whoops</span></div>
             <div className=" text-lg p-12 m-auto font-light text-center flex">I feel like dataviz aspires to be an exact science, with everything in its place. But in the process of reaching that goal....things will very much be out of place. </div>
-            <div className={'flex flex-row flex-wrap justify-center gap-2 m-20'}>
-                {mistakes.map((mistake,i)=>{
+            <div className={'flex flex-row flex-wrap justify-center gap-2 m-10'}>
+                {content.map((mistake,i)=>{
                     return (
                         <div key={i}>
                             <div className={'group relative'} onClick={()=>{toggleModal( mistake)}}>
-                                <div className={'group-hover:brightness-[30%] flex' }>
+                                <div className={'group-hover:brightness-[30%] flex max-h-[900px]' }>
                                     <Image
                                         src={'https:' + mistake.fields.media.fields.file.url}
                                         layout={'raw'}

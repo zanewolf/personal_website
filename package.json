@@ -22,6 +22,7 @@
     "react-modal-image": "^2.5.0",
     "react-photo-gallery": "^8.0.0",
     "react-scroll-parallax": "^3.2.0",
+    "stringquery": "^1.0.8",
     "tailwindcss-typography": "^3.1.0"
   },
   "devDependencies": {

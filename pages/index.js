@@ -1,8 +1,11 @@
-import Projects from "../components/projects";
+import SelectProjects from "../components/selectProjects";
 import {createClient} from "contentful";
 import {Parallax} from "react-scroll-parallax";
 import Link from "next/link";
 import React from "react";
+import {fetchMedia} from "../utils/ContentfulAPI";
+import Router from 'next/router'
+
 
 
 Home.title=' Zane Wolf | Home'
@@ -11,38 +14,31 @@ Home.title=' Zane Wolf | Home'
 
 export async function getStaticProps(){
 
-    const client = createClient({
-        space: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-    })
 
-    const res = await client.getEntries({content_type:'projects',order:'-sys.createdAt'})
+    let content = fetchMedia('projects')
+        .then((projectsFetched)=> projectsFetched)
+        .catch((error)=> console.log(error))
 
-    return{
-        props: {
-            projects: res.items
-        },
-        revalidate: 10
-    }
+    return content
 
 }
 
-export default function Home({projects}) {
-    // projects= Set{...projects}
 
-    const copy =  () => {
-        navigator.clipboard.writeText('rzanewolf@gmail.com');
-        alert('Email address copied');
-    }
-
-    console.log(projects)
+export default function Home({content}) {
 
   const keywords = [
-      {keyword: 'rock climber', color: 'text-primary'},
-      {keyword: 'data designer', color: 'text-secondary-200'},
-      {keyword: 'scientist', color: 'text-secondary-300'},
-      {keyword: 'wildlife photographer', color: 'text-secondary-400'}
+      {keyword: 'photographer', color: 'text-primary',link:'/photography', query:''},
+      {keyword: 'data designer', color: 'text-secondary-200',link:'/projects', query:'data visualization'},
+      {keyword: 'scientist', color: 'text-secondary-300',link:'/projects', query:'science'},
+      {keyword: 'website developer', color: 'text-secondary-400',link:'/projects', query:'web design'}
   ]
+
+
+  const copy =  () => {
+      navigator.clipboard.writeText('rzanewolf@gmail.com');
+      alert('Email address copied');
+  }
+
 
 
   return (
@@ -54,14 +50,21 @@ export default function Home({projects}) {
                   </div>
                   <div className="title-content__container inline-flex overflow-hidden font-semibold text-3xl items-center mt-1">
                       {/*<p className="title-content__container__text  inline-flex">I'm a</p>*/}
-                      <span className="blinker text-xl md:text-4xl text-shadow">[</span>
+                      <span className="blinker text-3xl md:text-4xl text-shadow">[</span>
                       <ul className="title-content__container__list text-center list-none">
                           {keywords.map((keyword,i)=>{
                               // console.log(keyword)
-                              return <li className={`title-content__container__list__item m-1 text-2xl md:text-3xl text-shadow ${keyword.color}`} key={i}>{keyword.keyword}</li>
+                              return <li className={`title-content__container__list__item m-2 text-2xl md:text-3xl text-shadow ${keyword.color}`} key={i}>
+                                  <Link href={{ pathname: keyword.link, query: { cat: keyword.query }}} as={keyword.link} >
+                                      <a>
+                                          {keyword.keyword}
+                                      </a>
+                                  </Link>
+
+                              </li>
                           })}
                       </ul>
-                      <span className="blinker text-xl md:text-4xl text-shadow">]</span>
+                      <span className="blinker text-3xl md:text-4xl text-shadow">]</span>
                   </div>
               </Parallax>
               <Parallax speed={-10} className={'hidden md:block'} >
@@ -103,12 +106,12 @@ export default function Home({projects}) {
                       {/*<div className="hexed mt-20">*/}
 
 
-                      <Projects projects={projects.filter(d=>d.fields.selected)}/>
+                      <SelectProjects projects={content.filter(d=>d.fields.selected).slice(0,5)}/>
                       {/*</div>*/}
                   {/*</div>*/}
 
           </section>
-          <div className="spacer h-32"></div>
+          <div className="visible md:hidden spacer h-32"></div>
 
       </div>
 

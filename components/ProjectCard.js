@@ -19,11 +19,12 @@ export default function ProjectCard({ project }) {
                             alt={'project-image-'+name}
                             layout={'fill'}
                             objectFit= {'cover'}
+                            // quality={100}
                             // width={400}
                             // height={300}
                         />
                         <div className={'flex flex-col flex-nowrap justify-center h-full items-center group-hover:relative'}>
-                            <div className={'text-2xl border-b-2 lowercase'}>{name}</div>
+                            <div className={'text-2xl flex text-center justify-center ml-auto mr-auto border-b-2 lowercase'}>{name}</div>
                             <hr/>
                             <div className={''}>
                                 {project.fields.categories}
