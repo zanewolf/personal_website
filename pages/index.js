@@ -29,8 +29,8 @@ export default function Home({content}) {
   const keywords = [
       {keyword: 'photographer', color: 'text-primary',link:'/photography', query:''},
       {keyword: 'data designer', color: 'text-secondary-200',link:'/projects', query:'data visualization'},
-      {keyword: 'scientist', color: 'text-secondary-300',link:'/projects', query:'science'},
-      {keyword: 'website developer', color: 'text-secondary-400',link:'/projects', query:'web design'}
+      {keyword: 'scientist', color: 'text-secondary-400',link:'/projects', query:'science'},
+      {keyword: 'website developer', color: 'text-secondary-300',link:'/projects', query:'web design'}
   ]
 
 
@@ -44,17 +44,17 @@ export default function Home({content}) {
   return (
       <div className={''}>
           <section className={'landingPage'}>
-              <Parallax speed={-20} className={'title-content flex flex-col items-center justify-center overflow-x-hidden pt-40 md:pt-80 md:mb-32'}>
+              <Parallax speed={-30} className={'title-content flex flex-col items-center justify-center overflow-x-hidden pt-40 md:pt-80 md:mb-32'}>
                   <div className="greeting mb-5 flex-wrap">
-                      <h1 className={"text-4xl text-shadow-lg"}>hi. i'm zane and i'm a </h1>
+                      <h1 className={"text-4xl md:text-5xl text-shadow-lg"}>hi. i'm zane and i'm a </h1>
                   </div>
                   <div className="title-content__container inline-flex overflow-hidden font-semibold text-3xl items-center mt-1">
                       {/*<p className="title-content__container__text  inline-flex">I'm a</p>*/}
-                      <span className="blinker text-3xl md:text-4xl text-shadow">[</span>
+                      <span className="blinker text-3xl md:text-5xl text-shadow">[</span>
                       <ul className="title-content__container__list text-center list-none">
                           {keywords.map((keyword,i)=>{
                               // console.log(keyword)
-                              return <li className={`title-content__container__list__item m-2 text-2xl md:text-3xl text-shadow ${keyword.color}`} key={i}>
+                              return <li className={`title-content__container__list__item m-4 text-2xl md:text-4xl text-shadow ${keyword.color}`} key={i}>
                                   <Link href={{ pathname: keyword.link, query: { cat: keyword.query }}} as={keyword.link} >
                                       <a>
                                           {keyword.keyword}
@@ -64,7 +64,7 @@ export default function Home({content}) {
                               </li>
                           })}
                       </ul>
-                      <span className="blinker text-3xl md:text-4xl text-shadow">]</span>
+                      <span className="blinker text-3xl md:text-5xl text-shadow">]</span>
                   </div>
               </Parallax>
               <Parallax speed={-10} className={'hidden md:block'} >
@@ -100,7 +100,7 @@ export default function Home({content}) {
               </Parallax>
 
           </section>
-          <section className={''}>
+          <Parallax speed={20} className={''}>
                   {/*<div >*/}
 
                       {/*<div className="hexed mt-20">*/}
@@ -110,8 +110,8 @@ export default function Home({content}) {
                       {/*</div>*/}
                   {/*</div>*/}
 
-          </section>
-          <div className="visible md:hidden spacer h-32"></div>
+          </Parallax>
+          <div className="visible lg:hidden spacer h-32"></div>
 
       </div>
 

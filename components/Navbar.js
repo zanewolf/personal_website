@@ -2,9 +2,10 @@ import React, {useState} from 'react';
 import Link from "next/link";
 import Image from 'next/image'
 import {menuData} from '../data/menuData'
+import {update} from "lodash";
 
-function NavLink({to, children}) {
-    return <Link href={to}><a className={`mx-4 hover:scale-110 duration-70`}>
+function NavLink({to, activeNav,children}) {
+    return <Link href={to} className={`mx-4 hover:scale-110 duration-70 ${activeNav ? 'brightness-100' : 'brightness-50'}`}><a >
         {children}
     </a></Link>
 }
@@ -45,6 +46,11 @@ function MobileNav({open, setOpen}) {
 export default function Navbar() {
 
     const [open, setOpen] = useState(false)
+    const [activeLink, setActiveLink] = useState('home')
+
+    const updateActiveLink = (pass) =>{
+        setActiveLink(pass)
+    }
     return (
         <nav className="flex filter px-2 md:px-12 md:py-4 text-center z-10">
             {/*<div className="mobile w-full">*/}
@@ -77,9 +83,11 @@ export default function Navbar() {
                     <span className={`h-1 w-full rounded-lg transform transition duration-300 ease-in-out ${open ? "bg-black -rotate-45 -translate-y-3.5 b" : "bg-white"}`} />
                 </div>
 
-                <div className="hidden md:flex text-lg md:text-4xl">
+                <div className="hidden md:flex text-lg md:text-4xl gap-8">
                     {menuData.map((navLink,i)=>{
-                        return <NavLink to={navLink.to} key={i}>{navLink.title}</NavLink>
+                        return <NavLink to={navLink.to} activeNav={navLink.title==activeLink ? true:false} key={i}>
+                            {navLink.title}
+                        </NavLink>
                         }
                     )}
                 </div>

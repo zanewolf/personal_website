@@ -11,13 +11,13 @@ module.exports = {
         secondary: {
           100: "#212121",
           200: '#07f8ff',
-          300: '#9525fb',
+          300: '#b95dfa',
           400: '#52ff00'
         }
       },
       fontFamily: {
         body: ['Lexend'],
-        accent: ['Roboto Slab']
+        accent: ['Source Code Pro']
       },
       boxShadow: {
         '3xl': '0 30px 55px -12px rgb(0 0 0 / 0.25)',

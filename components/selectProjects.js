@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function SelectProjects({projects}) {
 
-    // console.log(projects)
+    // console.log(color)
 
     return (
         <div className="projectDiv flex flex-col flex-nowrap relative justify-center">
@@ -36,7 +36,7 @@ export default function SelectProjects({projects}) {
                             <ProjectCard key={project.sys.id} project={project} className={'hexCard'} />
                         )}
                     </div>
-                    <div className="projectButton flex justify-center m-auto max-w-[50vw] md:max-w-[20vw] w-auto text-secondary-100 p-2 mt-8 md:mt-12 lg:mt-24 rounded-2xl duration-200 border-2 border-secondary-100 hover:scale-110 duration-200">
+                    <div className="projectButton flex justify-center m-auto max-w-[50vw] md:max-w-[30vw] w-auto text-secondary-100 text-xl md:text-2xl p-2 mt-8 md:mt-12 lg:mt-24 rounded-2xl duration-200 border-2 border-secondary-100 hover:scale-110 duration-200">
                         <Link href={'/projects'}>
                             <a>
                                 view all projects
