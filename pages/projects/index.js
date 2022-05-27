@@ -78,11 +78,11 @@ export default function ProjectPage({content}) {
                                 onChange={handleSelect}
                                 autoWidth
                                 // label="Project"
-                                className={`text-2xl lg:text-4xl font-bold ${categories.filter(cat=>cat.name===selectedCategory)[0].color} hover:scale-105 `}
+                                className={`!text-3xl lg:!text-4xl font-bold ${categories.filter(cat=>cat.name===selectedCategory)[0].color} hover:scale-105 `}
                             >
                                 {categories.map((cat,i)=>{
                                     // console.log(cat)
-                                    return <MenuItem key={i} value={cat.name} className={`border-bottom-2 border-white ${cat.color}`} >{cat.name}</MenuItem>
+                                    return <MenuItem key={i} value={cat.name} className={`border-bottom-2 border-white`} >{cat.name}</MenuItem>
                                 })}
                             </Select>
                         </FormControl>
