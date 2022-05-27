@@ -64,7 +64,7 @@ export default function ProjectPage({content}) {
             <div className="text-3xl lg:text-4xl  flex flex-row justify-center items-center m-auto mt-16 lowercase">
                 <div className={'projectForm pr-4 pt-2'}>
                     {/*<div>*/}
-                    <FormControl sx={{m: 1, minWidth: 80}} className={' border-0 m-0'}>
+                    <FormControl sx={{m: 1, minWidth: 80}} className={` border-0 m-0 !${categories.filter(cat => cat.name === selectedCategory)[0].color}`}>
                         {/*<InputLabel id="demo-simple-select-autowidth-label">Age</InputLabel>*/}
                         <Select
                             labelId="demo-simple-select-autowidth-label"
