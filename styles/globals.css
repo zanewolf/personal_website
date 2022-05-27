@@ -22,6 +22,10 @@ body {
   overflow-x: hidden;
 
 }
+
+.css-fvipm8{
+  color: unset!important;
+}
 a {
   text-decoration: none;
 }
