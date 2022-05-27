@@ -223,7 +223,7 @@ footer {
   margin: auto;
 }
 
-.MuiOutlinedInput-root.MuiInputBase-colorPrimary{
+.MuiInputBase-colorPrimary{
   color: unset;
 }
 .MuiOutlinedInput-root {
