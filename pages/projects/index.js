@@ -78,7 +78,7 @@ export default function ProjectPage({content}) {
                                 onChange={handleSelect}
                                 autoWidth
                                 // label="Project"
-                                className={`!text-3xl lg:!text-4xl font-bold ${categories.filter(cat=>cat.name===selectedCategory)[0].color} hover:scale-105 `}
+                                className={`!text-3xl lg:!text-4xl font-bold !${categories.filter(cat=>cat.name===selectedCategory)[0].color} hover:scale-105 `}
                             >
                                 {categories.map((cat,i)=>{
                                     // console.log(cat)
