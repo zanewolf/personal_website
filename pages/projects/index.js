@@ -56,6 +56,8 @@ export default function ProjectPage({content}) {
         setSelectedCategory(event.target.value)
     }
 
+    let selectedColor = categories.filter(cat => cat.name === selectedCategory)[0].colorValue
+
     // console.log(categories.filter(cat => cat.name === selectedCategory)[0].color)
 
 
@@ -64,7 +66,7 @@ export default function ProjectPage({content}) {
             <div className="text-3xl lg:text-4xl  flex flex-row justify-center items-center m-auto mt-16 lowercase">
                 <div className={'projectForm pr-4 pt-2'}>
                     {/*<div>*/}
-                    <FormControl sx={{m: 1, minWidth: 80}} className={` border-0 m-0 !${categories.filter(cat => cat.name === selectedCategory)[0].color}`}>
+                    <FormControl sx={{m: 1, minWidth: 80}} className={` border-0 m-0 `}>
                         {/*<InputLabel id="demo-simple-select-autowidth-label">Age</InputLabel>*/}
                         <Select
                             labelId="demo-simple-select-autowidth-label"
@@ -73,8 +75,11 @@ export default function ProjectPage({content}) {
                             onChange={handleSelect}
                             autoWidth
                             // label="Project"
-                            className={`${categories.filter(cat => cat.name === selectedCategory)[0].color} !text-3xl lg:!text-4xl !font-bold hover:scale-105 `}
+                            className={` !text-3xl lg:!text-4xl !font-bold hover:scale-105 `}
                             // styles={{color: ``}}
+                            sx={{
+                                color: selectedColor,
+                            }}
                         >
                             {categories.map((cat, i) => {
                                 // console.log(cat)
