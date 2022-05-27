@@ -2,7 +2,7 @@ import {createClient} from "contentful";
 
 export async function fetchMedia(content){
 
-    console.log('fetchMedia', content)
+    // console.log('fetchMedia', content)
 
     const client = createClient({
         space: process.env.CONTENTFUL_SPACE_ID,

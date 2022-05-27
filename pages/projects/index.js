@@ -8,18 +8,22 @@ import Select from '@mui/material/Select';
 const categories = [{
     name: 'All',
     color: 'text-primary',
+    colorValue:'#fff',
     value: '10'
 }, {
     name: 'Data Visualization',
     color: 'text-secondary-200',
+    colorValue:'#07f8ff',
     value: '10'
 }, {
     name: 'Web Design',
     color: 'text-secondary-300',
+    colorValue: '#b95dfa',
     value: '10'
 }, {
     name: 'Science',
     color: 'text-secondary-400',
+    colorValue: '#52ff00',
     value: '10'
 }]
 
@@ -52,7 +56,7 @@ export default function ProjectPage({content}) {
         setSelectedCategory(event.target.value)
     }
 
-    console.log(categories.filter(cat => cat.name === selectedCategory)[0].color)
+    // console.log(categories.filter(cat => cat.name === selectedCategory)[0].color)
 
 
     return (
@@ -69,7 +73,8 @@ export default function ProjectPage({content}) {
                             onChange={handleSelect}
                             autoWidth
                             // label="Project"
-                            className={`!text-3xl lg:!text-4xl !font-bold ${categories.filter(cat => cat.name === selectedCategory)[0].color} hover:scale-105 `}
+                            className={`!text-3xl lg:!text-4xl !font-bold !text-${categories.filter(cat => cat.name === selectedCategory)[0].colorValue} hover:scale-105 `}
+                            // styles={{color: ``}}
                         >
                             {categories.map((cat, i) => {
                                 // console.log(cat)
