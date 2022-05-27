@@ -33,7 +33,7 @@ export default function BlogBody({content,accentColor}) {
         },
         renderNode: {
             [BLOCKS.PARAGRAPH]: (node, children) => {
-                return <p className={'text-md md:text-2xl font-serif font-normal mt-6 mb-6 text-shadow-sm antialiased subpixel-antialiased leading-6 tracking-relaxed'}>{children}</p>
+                return <p className={'text-md md:text-xl font-serif font-normal mt-6 mb-6 text-shadow-sm antialiased subpixel-antialiased leading-6 tracking-relaxed'}>{children}</p>
             },
             [BLOCKS.HEADING_3]: (node, children) => {
                 return <div className={`text-2xl md:text-4xl font-bold mt-8 lg:mt-24 mb-6 uppercase text-${accentColor}`}>{children}</div>
