@@ -238,7 +238,7 @@ footer {
 }
 
 .MuiMenuItem-root{
-  color: white;
+  /*color: white;*/
   font-size: 2em;
   /*transition: ease-in-out;*/
   /*transition-duration: 500;*/
@@ -249,8 +249,8 @@ footer {
   margin-top: 1em;
 }
 .MuiPaper-root {
-  background-color: rgba(22, 22, 25, 0.95);
-  filter: blur(0.7);
+  /*background-color: rgba(22, 22, 25, 0.95);*/
+  /*filter: blur(0.7);*/
   margin-top:0.5em;
 
 }

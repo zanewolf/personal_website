@@ -75,7 +75,7 @@ export default function ProjectPage({content}) {
                             >
                                 {categories.map((cat,i)=>{
                                     // console.log(cat)
-                                    return <MenuItem key={i} value={cat.name} className={`border-bottom-2 border-white`} >{cat.name}</MenuItem>
+                                    return <MenuItem key={i} value={cat.name} className={`border-bottom-2 border-white ${cat.color}`} >{cat.name}</MenuItem>
                                 })}
                             </Select>
                         </FormControl>
