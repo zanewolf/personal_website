@@ -19,11 +19,11 @@ export default function ProjectCard2({ project}) {
 
     // console.log('hi')
     return (
-        <div className={`card w-[80vw] h-[50vh] md:w-[40vw] md:h-[35vh] lg:w-[35vw] lg:h-[40vh] xl:w-[23vw] xl:h-[45vh] 2xl:w-[18vw] 2xl:h-[40vh] `}>
+        <div className={`card w-[80vw] h-[50vh] md:w-[40vw] md:h-[35vh] lg:w-[35vw] lg:h-[40vh] xl:w-[23vw] xl:h-[40vh] 2xl:w-[18vw] 2xl:h-[40vh] `}>
 
                 <Link href={'/projects/' + slug}>
                     <a>
-                        <div className={`featured w-100 h-2/5 relative`}>
+                        <div className={`featured w-[100%] h-[65%] relative`}>
                             <Image
                                 src={'https:' + thumbnail.fields.file.url}
                                 layout={'fill'}
@@ -34,7 +34,7 @@ export default function ProjectCard2({ project}) {
                                 // height={'100%'}
                             />
                         </div>
-                        <div className="card-content relative h-1/4">
+                        <div className="card-content relative h-[35%]">
                             <div className="info p-2">
                                 <div className={'text-lg lg:text-2xl font-bold uppercase border-b-2 border-black w-auto'}>{ name }</div>
                                 <div className={'text-md lg:text-xl font-normal'}>{project.fields.categories}</div>
