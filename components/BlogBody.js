@@ -5,20 +5,22 @@ import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
 
-const useStyles = makeStyles((theme) => ({
-    blogBody: {
-        // "& ul,li":{
-        //     listStyle:'square',
-        //     marginLeft:'1rem',
-        //     paddingRight:'1rem'
-        // }
-    },
-}));
+// const useStyles = makeStyles((theme) => ({
+//     blogBody: {
+//         // fontFamily:'Roboto Slab',
+//
+//         // "& ul,li":{
+//         //     listStyle:'square',
+//         //     marginLeft:'1rem',
+//         //     paddingRight:'1rem'
+//         // }
+//     },
+// }));
 
 
 export default function BlogBody({content,accentColor}) {
 
-    const classes = useStyles();
+    // const classes = useStyles();
     const options = {
         renderMark:{
             [MARKS.ITALIC]: (node, children) => {
@@ -30,10 +32,13 @@ export default function BlogBody({content,accentColor}) {
             [MARKS.CODE]: (node, children) => {
                 return <span className={'bg-slate-700 text-yellow-500 font-accent font-light pl-2 mr-2'}>{node}</span>
             },
+            [MARKS.UNDERLINE]: (node, children) => {
+                return <span className={'underline'}>{node}</span>
+            },
         },
         renderNode: {
             [BLOCKS.PARAGRAPH]: (node, children) => {
-                return <p className={'text-md md:text-xl font-serif font-normal mt-6 mb-6 text-shadow-sm antialiased subpixel-antialiased leading-6 tracking-relaxed'}>{children}</p>
+                return <p className={'text-sm md:text-xl font-body mt-6 mb-6 text-shadow-sm antialiased subpixel-antialiased !leading-relaxed !tracking-wide'}>{children}</p>
             },
             [BLOCKS.HEADING_3]: (node, children) => {
                 return <div className={`text-2xl md:text-4xl font-bold mt-8 lg:mt-24 mb-6 uppercase text-${accentColor}`}>{children}</div>
@@ -48,13 +53,21 @@ export default function BlogBody({content,accentColor}) {
                 return <ol>{children}</ol>
             },
             [BLOCKS.EMBEDDED_ASSET]: (node) => {
+                console.log(node)
                 const { url, fileName } = node.data.target.fields.file;
+                let description = node.data.target.fields.description ;
                 return (
-                    <img
+                    <>
+                        <img
                         src={url}
                         alt={fileName}
-                        style={{ height: "auto", maxHeight:'90vh',width: "auto", maxWidth:"100%", margin: "auto",justifyContent:'center' }}
-                    />
+                        style={{ height: "auto",width: "100%", maxWidth:"100%", margin: "auto",justifyContent:'center' }}
+                        />
+                        {description && <div className={'text-xs md:text-lg p-2 bg-neutral-800 text-gray-200 font-light italic'}>
+                            {description}
+
+                        </div>}
+                    </>
                 );
             },
             [INLINES.HYPERLINK]: (node) => {
@@ -72,7 +85,7 @@ export default function BlogBody({content,accentColor}) {
     };
     return (
         <div>
-            <div className={classes.blogBody}>
+            <div className={''}>
                 {documentToReactComponents(content, options)}
             </div>
         </div>

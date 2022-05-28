@@ -16,7 +16,7 @@ module.exports = {
         }
       },
       fontFamily: {
-        body: ['Lexend'],
+        body: ['Roboto Slab'],
         accent: ['Source Code Pro']
       },
       boxShadow: {

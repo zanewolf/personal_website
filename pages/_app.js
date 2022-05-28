@@ -13,6 +13,7 @@ function MyApp({ Component, pageProps }) {
               {Component.keywords &&
                   <meta className="keywords" content={Component.keywords}/>
               }
+              {/*<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />*/}
 
           </Head>
 
