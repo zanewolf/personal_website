@@ -24,21 +24,25 @@ export default function BlogBody({content,accentColor}) {
     const options = {
         renderMark:{
             [MARKS.ITALIC]: (node, children) => {
-                return <span className={'italic'}>{children}</span>
+                return <i>{node}</i>
             },
             [MARKS.BOLD]: (node, children) => {
-                return <span className={'font-bold'}>{children}</span>
+                return <b>{node}</b>
             },
             [MARKS.CODE]: (node, children) => {
-                return <span className={'bg-slate-700 text-yellow-500 font-accent font-light pl-2 mr-2'}>{node}</span>
+                return <code className={'bg-slate-700 font-accent font-light pl-2 mr-2'}>{node}</code>
+                // return <span className={'bg-slate-700 text-yellow-500 font-accent font-light pl-2 mr-2'}>{node}</span>
             },
             [MARKS.UNDERLINE]: (node, children) => {
-                return <span className={'underline'}>{node}</span>
+                return <u>{node}</u>
             },
         },
         renderNode: {
             [BLOCKS.PARAGRAPH]: (node, children) => {
-                return <p className={'text-sm md:text-xl font-body mt-6 mb-6 text-shadow-sm antialiased subpixel-antialiased !leading-relaxed !tracking-wide'}>{children}</p>
+                return <p className={'text-sm md:text-lg font-body mt-6 mb-6 text-shadow-sm antialiased subpixel-antialiased !leading-relaxed !tracking-wide'}>{children}</p>
+            },
+            [BLOCKS.QUOTE]: (node, children) => {
+                return <blockquote className={'italic border-l-4 border-white pl-4 font-light'}>{children}</blockquote>
             },
             [BLOCKS.HEADING_3]: (node, children) => {
                 return <div className={`text-2xl md:text-4xl font-bold mt-8 lg:mt-24 mb-6 uppercase text-${accentColor}`}>{children}</div>

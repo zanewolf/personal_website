@@ -4,7 +4,7 @@ import Image from 'next/image'
 const categorieColors={
     'All':'primary',
     'Data Visualization':'secondary-200',
-    'Website Design':'secondary-300',
+    'Web Design':'secondary-300',
     'Science':'secondary-400'
 }
 

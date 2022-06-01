@@ -27,10 +27,10 @@ export async function getStaticProps(){
 export default function Home({content}) {
 
   const keywords = [
-      {keyword: 'photographer', color: 'text-primary',link:'/photography', query:''},
       {keyword: 'data designer', color: 'text-secondary-200',link:'/projects', query:'data visualization'},
       {keyword: 'scientist', color: 'text-secondary-400',link:'/projects', query:'science'},
-      {keyword: 'website developer', color: 'text-secondary-300',link:'/projects', query:'web design'}
+      {keyword: 'website developer', color: 'text-secondary-300',link:'/projects', query:'web design'},
+      {keyword: 'photographer', color: 'text-primary',link:'/photography', query:''}
   ]
 
 

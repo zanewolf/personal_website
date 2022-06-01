@@ -33,7 +33,7 @@ export default function About (){
                     />
 
                 </div>
-                <Parallax speed={0} translateY={['200%','-50%']} className={'hidden md:block aboutmeParagraph h-auto absolute top-1/4 right-40 p-6 flex justify-center w-1/3 m-auto '}>
+                <Parallax speed={0} translateY={['150%','-50%']} className={'hidden md:block aboutmeParagraph h-auto absolute top-1/4 right-40 p-6 flex justify-center w-1/3 m-auto '}>
                     <div className={'text-3xl font-bold leading-loose mb-8 bg-black/50 md:bg-neutral-900/0 -mt-16 md:mt-2'}> I am <span className={'text-secondary-200'}>passionate</span> about sharing what I love with others, whether it's giving conference talks or workshops, writing and editing scicomm articles, or taking my friends rock climbing and throwing them off the cliff (they're tied to ropes, I promise).</div>
                 </Parallax>
                 {/*<Parallax speed={-30} translateY={['-10000%','30000%']}  className={'relative left-32'}>*/}
