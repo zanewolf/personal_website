@@ -4,8 +4,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap');
 @tailwind base;
-@tailwind components;
+/*@tailwind components;*/
 @tailwind utilities;
+
+@tailwind components {
+  .cv-section {
+    @apply text-2xl underline flex justify-left;
+  }
+}
 
 html {
   height: 100%;
@@ -85,6 +91,7 @@ footer {
 .landingPage{
   min-height:70vh;
   height: auto;
+  max-height:90vh;
   z-index: -5;
 }
 
@@ -116,7 +123,7 @@ footer {
   max-width: 50px;
   position: relative;
   left: 75%;
-  top: 0;
+  top: 0%;
 
 }
 

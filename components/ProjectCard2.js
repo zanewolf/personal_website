@@ -19,7 +19,7 @@ export default function ProjectCard2({ project}) {
 
     // console.log('hi')
     return (
-        <div className={`card w-[80vw] h-[50vh] md:w-[40vw] md:h-[35vh] lg:w-[35vw] lg:h-[40vh] xl:w-[23vw] xl:h-[40vh] 2xl:w-[18vw] 2xl:h-[40vh] `}>
+        <div className={`card w-[80vw] min-h-[55vh] h-auto md:w-[40vw] md:h-[35vh] lg:w-[35vw] lg:h-[40vh] xl:w-[23vw] xl:h-[40vh] 2xl:w-[18vw] 2xl:h-[40vh] `}>
 
                 <Link href={'/projects/' + slug}>
                     <a>
@@ -28,6 +28,8 @@ export default function ProjectCard2({ project}) {
                                 src={'https:' + thumbnail.fields.file.url}
                                 layout={'fill'}
                                 alt={'project-image-'+name}
+                                blurDataURL={`https://${thumbnail.fields.file.url}?q=${10}`}
+                                placeholder="blur"
                                 objectFit={'cover'}
                                 // sizes={'100%'}
                                 // width={'100%'}
@@ -39,7 +41,7 @@ export default function ProjectCard2({ project}) {
                                 <div className={'text-lg lg:text-2xl font-bold uppercase border-b-2 border-black w-auto'}>{ name }</div>
                                 <div className={'text-md lg:text-xl font-normal'}>{project.fields.categories}</div>
                                 {/*<h2>{project.fields.tools}</h2>*/}
-                               <div className={'h-8 pt-1 absolute bottom-1 flex flex-row flex-wrap'}>
+                               <div className={'pt-1 absolute bottom-1 gap-y-1 flex flex-row flex-wrap flex-grow-1'}>
                                    {tools?.map((tool,i)=> <p key={i} className={`rounded-full text-md bg-gray-700 text-${categorieColors[project.fields.categories]} pl-2 pr-2 mr-2`}>{tool}</p>)}
                                 </div>
 

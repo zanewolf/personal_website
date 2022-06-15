@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
+import Image from 'next/image'
 
 // const useStyles = makeStyles((theme) => ({
 //     blogBody: {
@@ -27,7 +28,7 @@ export default function BlogBody({content,accentColor}) {
                 return <i>{node}</i>
             },
             [MARKS.BOLD]: (node, children) => {
-                return <b>{node}</b>
+                return <b className={accentColor}>{node}</b>
             },
             [MARKS.CODE]: (node, children) => {
                 return <code className={'bg-slate-700 font-accent font-light pl-2 mr-2'}>{node}</code>
@@ -57,21 +58,27 @@ export default function BlogBody({content,accentColor}) {
                 return <ol>{children}</ol>
             },
             [BLOCKS.EMBEDDED_ASSET]: (node) => {
-                console.log(node)
+                // console.log(node)
                 const { url, fileName } = node.data.target.fields.file;
                 let description = node.data.target.fields.description ;
                 return (
-                    <>
+                    <div className={'h-full w-full'}>
                         <img
                         src={url}
                         alt={fileName}
                         style={{ height: "auto",width: "100%", maxWidth:"100%", margin: "auto",justifyContent:'center' }}
+                        loading={'lazy'}
+                        // layout={'intrinsic'}
+                        // objectFit={'cover'}
+                        // sizes={'100vw'}
+                        // width={'100%'}
+                        // height={'100%'}
                         />
                         {description && <div className={'text-xs md:text-lg p-2 bg-neutral-800 text-gray-200 font-light italic'}>
                             {description}
 
                         </div>}
-                    </>
+                    </div>
                 );
             },
             [INLINES.HYPERLINK]: (node) => {

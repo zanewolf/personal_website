@@ -8,7 +8,7 @@ import Link from 'next/link'
 const categorieColors={
     'All':'primary',
     'Data Visualization':'secondary-200',
-    'Website Design':'secondary-300',
+    'Web Design':'secondary-300',
     'Science':'secondary-400'
 }
 
@@ -45,7 +45,7 @@ export const getStaticProps = async ({ params }) => {
     if (!items.length){
         return {
             redirect: {
-                destination: '/',
+                destination: '/projects',
                 permanent: false
             }
         }
@@ -66,7 +66,9 @@ export default function ProjectDetails({ project }) {
 
 
 
-    const { featuredImage, name, tools, categories,link, linkName, description } = project.fields
+    console.log(project.fields)
+    const { featuredImage, name, tools, categories,link, linkName, completed,client,description } = project.fields
+    console.log(categories)
     const accentColor = categorieColors[project.fields.categories]
     console.log(link)
 
@@ -78,6 +80,8 @@ export default function ProjectDetails({ project }) {
                         src={'https:' + featuredImage.fields.file.url}
                         alt={'featured-image-project-'+name}
                         layout={'fill'}
+                        blurDataURL={`https://${featuredImage.fields.file.url}?q=${10}`}
+                        placeholder="blur"
                         quality={100}
                         objectFit={'cover'}
                         objectPosition={'top'}
@@ -85,7 +89,7 @@ export default function ProjectDetails({ project }) {
                         // height={featuredImage.fields.file.details.image.height}
                     />
                     <div className={'absolute h-full w-full bg-gradient-to-t from-black/90'}></div>
-                    <Parallax speed={60} className={'absolute text-8xl w-full h-full flex justify-center place-items-end m-auto'}>{name}</Parallax>
+                    <Parallax speed={60} className={'absolute text-6xl md:text-8xl mt-4 md:mt-0 md:pb-3 w-full h-full flex justify-center text-center place-items-end m-auto'}>{name}</Parallax>
                 </div>
                 <div className="headerInfo h-[15vh] md:h-[12vh] w-full text-black bg-white m-auto  ">
                     <div className="info h-full ml-6 md:ml-12 md:mr-12 lg:ml-28 mr-4 lg:mr-28 flex flex-row items-center justify-center mt-auto mb-auto">
@@ -100,11 +104,19 @@ export default function ProjectDetails({ project }) {
                             }
                         </div>
                         <div className={'verticalBar w-2 border-r-4 h-[70%] border-black'}></div>
-                        <div className="projectName text-2xl md:text-4xl lg:text-5xl font-bold w-1/3 lg:w-1/2 flex flex-col justify-center text-center items-center m-auto lowercase">
-                            {name}
+                        <div className={'flex flex-col w-1/4 md:w-1/5 items-center justify-center m-auto gap-4'}>
+                            <div className={'category text-sm md:text-3xl border-b-2 border-black uppercase'}>Status</div>
+                            <div className={`text-xs lg:text-lg pr-2 pl-2 flex justify-center text-center m-auto rounded-full w-auto text-md bg-gray-700 text-${accentColor}`}> {completed ? 'Completed':'In Progress'}</div>
+
                         </div>
                         <div className={'verticalBar w-2 border-r-4 h-[70%] border-black'}></div>
-                        <div className={'h-8 pt-0 md:pt-1  w-1/4 md:w-1/5 flex flex-col flex-nowrap justify-center items-center m-auto gap-4'}>
+                        <div className={'flex flex-col w-1/4 md:w-1/5  items-center justify-center m-auto gap-4'}>
+                            <div className={'category text-sm md:text-3xl border-b-2 border-black uppercase'}>Client</div>
+                            <div className={`text-xs lg:text-lg pr-2 pl-2 flex justify-center text-center m-auto rounded-full w-auto text-md bg-gray-700 text-${accentColor}`}> {client}</div>
+
+                        </div>
+                        <div className={'verticalBar w-2 border-r-4 h-[70%] border-black'}></div>
+                        <div className={'h-8 pt-0 md:pt-1  w-1/4 md:w-1/3 flex flex-col flex-nowrap justify-center items-center m-auto gap-4'}>
                             <div className={'tools text-sm md:text-3xl border-b-2 border-black uppercase'}>Tools</div>
                             <div className={'flex flex-col md:flex-row justify-center gap-1 md:gap-4 text-md lg:text-lg'}>
                                 {tools?.map((tool,i)=> <p key={i} className={`rounded-full w-auto flex justify-center text-xs md:text-md lg:text-lg bg-gray-700 text-${accentColor} pl-2 pr-2 mr-2`}>{tool}</p>)}
@@ -126,6 +138,7 @@ export default function ProjectDetails({ project }) {
                 -webkit-clip-path: polygon(5% 5%, 95% 5%, 99% 50%, 95% 95%, 5% 95%, 1% 50%);
                 clip-path: polygon(5% 5%, 95% 5%, 99% 50%, 95% 95%, 5% 95%, 1% 50%);
             }
+            
       `}</style>
         </div>
     )

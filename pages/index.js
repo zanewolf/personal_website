@@ -44,7 +44,7 @@ export default function Home({content}) {
   return (
       <div className={''}>
           <section className={'landingPage'}>
-              <Parallax speed={-30} className={'title-content flex flex-col items-center justify-center overflow-x-hidden pt-40 md:pt-80 md:mb-32'}>
+              <Parallax speed={-20} className={'title-content flex flex-col items-center justify-center overflow-x-hidden pt-40 md:pt-80 md:mb-32'}>
                   <div className="greeting mb-5 flex-wrap">
                       <h1 className={"text-4xl md:text-5xl text-shadow-lg"}>hi. i'm zane and i'm a </h1>
                   </div>
