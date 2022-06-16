@@ -36,6 +36,7 @@
     "react-photo-gallery": "^8.0.0",
     "react-scroll-parallax": "^3.2.0",
     "stringquery": "^1.0.8",
+    "styled-components": "^5.3.5",
     "tailwindcss-typography": "^3.1.0"
   },
   "devDependencies": {
